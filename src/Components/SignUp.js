@@ -3,12 +3,20 @@ import { useDispatch } from 'react-redux';
 import { createUser } from '../Actions/user';
 
 const SignUp = () => {
-    const [username, setName] = useState('');
-    const signup_url = 'http://localhost:3000/api/v1/users';
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirmation, setPasswordConfirmation] = useState('');
+    const signup_url = 'http://localhost:3000/signup';
     const dispatch = useDispatch();
 
     const fetchUser = async() => {
-        const user = { username }
+        const user = {
+            name,
+            email,
+            password,
+            passwordConfirmation
+        }
         const config = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -16,6 +24,7 @@ const SignUp = () => {
         }
         const response = await fetch(signup_url, config);
         const data = await response.json()
+        console.log(data)
         dispatch(createUser(data))
     }
 
@@ -25,9 +34,12 @@ const SignUp = () => {
     }
     return(
         <div className="form-container">
-        <h3>ADD NEW BOOK</h3>
+        <h3>Signup</h3>
         <form onSubmit={onSubmit}>
-            <input name="name" type="text" value={username} placeholder="Username" onChange={(e) => setName(e.target.value)} required />
+            <input name="name" type="text" value={name} placeholder="Username" onChange={(e) => setName(e.target.value)} required />
+            <input name="email" type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
+            <input name="password" type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
+            <input name="password_confirmation" type="password" value={passwordConfirmation} placeholder="Confirm password" onChange={(e) => setPasswordConfirmation(e.target.value)} required />
             <button type="submit">Create User</button>
         </form>
         </div>
