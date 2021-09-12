@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const MeasureForm = () => {
     const [name, setName] = useState('');
     const [time, setTime] = useState('');
     const [count, setCount] = useState('');
-    const measure_url = 'http://localhost:3000/create/measure'
+    const measure_url = 'http://localhost:3000/create/measure';
+    const history = useHistory();
 
     const createMeasure = async() => {
         const measure = {
@@ -22,6 +24,7 @@ const MeasureForm = () => {
         }
         const response = await fetch(measure_url, config);
         const data = await response.json();
+        history.push('/measures');
         console.log(data);
     }
 

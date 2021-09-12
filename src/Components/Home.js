@@ -34,6 +34,7 @@ const Home = () => {
                     <h4>{storedUser.userReducer.data.name}</h4>
                     <button type="button" onClick={onClick}>logout</button>
                     <Link to="/create/measure">Add Measure</Link>
+                    <Link to="/measures">Your Measures</Link>
                 </div>
             )
         } else {

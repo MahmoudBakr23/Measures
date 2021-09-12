@@ -4,6 +4,7 @@ import SignUp from './SignUp';
 import Login from './Login';
 import Home from './Home';
 import MeasureForm from './MeasureForm';
+import MeasureList from './MeasureList';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { getUsers } from '../Actions/user';
 import { useDispatch } from 'react-redux';
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/create/measure" component={MeasureForm} />
+          <Route path="/measures" component={MeasureList} />
         </Switch>
       </BrowserRouter>
     </div>
