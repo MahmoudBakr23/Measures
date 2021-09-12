@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../App.css';
 import SignUp from './SignUp';
 import Login from './Login';
 import Home from './Home';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useEffect } from 'react';
+import { getUsers } from '../Actions/user';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
   const loggedIn_url = 'http://localhost:3000/logged_in';
+  const dispatch = useDispatch();
 
   const fetchLoggedInUser = async() => {
     const response = await fetch(loggedIn_url, {
@@ -16,12 +18,14 @@ const App = () => {
       }
     })
     const data = await response.json();
+    dispatch(getUsers(data));
     console.log(data);
   }
 
   useEffect(() => {
-    fetchLoggedInUser();  
-  }, [])
+    fetchLoggedInUser();
+  })
+
   return (
     <div className="App">
       <h1>Welcome API</h1>

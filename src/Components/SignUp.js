@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createUser } from '../Actions/user';
+import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
     const [name, setName] = useState('');
@@ -8,7 +7,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
     const signup_url = 'http://localhost:3000/signup';
-    const dispatch = useDispatch();
+    const history = useHistory();
 
     const fetchUser = async() => {
         const user = {
@@ -24,14 +23,15 @@ const SignUp = () => {
         }
         const response = await fetch(signup_url, config);
         const data = await response.json()
-        console.log(data)
-        dispatch(createUser(data))
+        localStorage.setItem('token', data.token);
     }
 
     const onSubmit = (e) => {
         fetchUser();
         e.preventDefault();
+        history.push('/');
     }
+    
     return(
         <div className="form-container">
         <h3>Signup</h3>
