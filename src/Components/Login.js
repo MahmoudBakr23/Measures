@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { createUser } from '../Actions/user';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getUsers } from '../Actions/user';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const login_url = 'http://localhost:3000/login';
-    // const dispatch = useDispatch();
+    const history = useHistory();
+    const dispatch = useDispatch();
 
     const fetchUser = async() => {
         const user = {
@@ -21,8 +23,10 @@ const Login = () => {
         const response = await fetch(login_url, config);
         const data = await response.json();
         localStorage.setItem('token', data.token);
+        dispatch(getUsers(data));
         console.log(localStorage.getItem('token'))
         console.log(data);
+        history.push('/');
     }
 
     const onSubmit = (e) => {
