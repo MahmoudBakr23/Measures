@@ -1,37 +1,45 @@
-// import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { createUser } from '../Actions/user';
+import React, { useState } from 'react';
 
-// const MeasureForm = () => {
-//     const [name, setName] = useState('');
-//     const signup_url = 'http://localhost:3000/api/v1/users';
-//     const dispatch = useDispatch();
+const MeasureForm = () => {
+    const [name, setName] = useState('');
+    const [time, setTime] = useState('');
+    const [count, setCount] = useState('');
+    const measure_url = 'http://localhost:3000/create/measure'
 
-//     const fetchUser = async() => {
-//         const user = { username }
-//         const config = {
-//             method: 'POST',
-//             headers: { 'Content-Type': 'application/json' },
-//             body: JSON.stringify(user)
-//         }
-//         const response = await fetch(signup_url, config);
-//         const data = await response.json()
-//         dispatch(createUser(data))
-//     }
+    const createMeasure = async() => {
+        const measure = {
+            name,
+            time,
+            count
+        }
+        const config = {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                Authorization: `bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(measure)
+        }
+        const response = await fetch(measure_url, config);
+        const data = await response.json();
+        console.log(data);
+    }
 
-//     const onSubmit = (e) => {
-//         fetchUser();
-//         e.preventDefault();
-//     }
-//     return(
-//         <div className="form-container">
-//         <h3>Signup</h3>
-//         <form onSubmit={onSubmit}>
-//             <input name="name" type="text" value={username} placeholder="Username" onChange={(e) => setName(e.target.value)} required />
-//             <button type="submit">Create User</button>
-//         </form>
-//         </div>
-//     )
-// }
+    const onSubmit = (e) => {
+        createMeasure();
+        e.preventDefault();
+    }
 
-// export default MeasureForm;
+    return(
+        <div>
+            <form onSubmit={onSubmit}>
+                <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
+                <input type="float" name="time" onChange={(e) => setTime(e.target.value)} />
+                <input type="number" name="count" onChange={(e) => setCount(e.target.value)} />
+                <button type="submit">GO</button>
+            </form>
+        </div>
+    )
+}
+
+export default MeasureForm;

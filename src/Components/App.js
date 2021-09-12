@@ -3,6 +3,7 @@ import '../App.css';
 import SignUp from './SignUp';
 import Login from './Login';
 import Home from './Home';
+import MeasureForm from './MeasureForm';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { getUsers } from '../Actions/user';
 import { useDispatch } from 'react-redux';
@@ -34,7 +35,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
-          {/* <Route path="/create/measure" component={MeasureForm} /> */}
+          <Route path="/create/measure" component={MeasureForm} />
         </Switch>
       </BrowserRouter>
     </div>
