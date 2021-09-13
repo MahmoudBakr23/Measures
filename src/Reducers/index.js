@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
 import userReducer from './user';
-import measureReducer from './measure';
+import { measureReducer, singleMeasureReducer } from './measure';
 
-export default combineReducers({ userReducer, measureReducer });
+export default combineReducers({ userReducer, measureReducer, singleMeasureReducer });

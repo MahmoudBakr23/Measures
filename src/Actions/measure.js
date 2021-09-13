@@ -1,4 +1,5 @@
 const SAVE_MEASURE = 'SAVE_MEASURE';
+const GET_MEASURE = 'GET_MEASURE';
 
 const saveMeasure = (measure) => {
     return {
@@ -7,4 +8,11 @@ const saveMeasure = (measure) => {
     }
 }
 
-export { saveMeasure, SAVE_MEASURE };
+const getMeasure = (measure) => {
+    return {
+        type: GET_MEASURE,
+        payload: measure
+    }
+}
+
+export { saveMeasure, SAVE_MEASURE, GET_MEASURE, getMeasure };

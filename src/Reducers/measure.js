@@ -1,6 +1,8 @@
 import { SAVE_MEASURE } from '../Actions/measure';
+import { GET_MEASURE } from '../Actions/measure';
 
 const initialMeasures = [];
+const initialMeasure = {};
 
 const measureReducer = (state = initialMeasures, action) => {
     switch(action.type) {
@@ -11,4 +13,13 @@ const measureReducer = (state = initialMeasures, action) => {
     }
 }
 
-export default measureReducer;
+const singleMeasureReducer = (state = initialMeasure, action) => {
+    switch(action.type) {
+        case GET_MEASURE:
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
+export { measureReducer, singleMeasureReducer };
