@@ -8,6 +8,7 @@ import MeasureList from './MeasureList';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { getUsers } from '../Actions/user';
 import { useDispatch } from 'react-redux';
+import Measure from './Measure';
 
 const App = () => {
   const loggedIn_url = 'http://localhost:3000/logged_in';
@@ -36,6 +37,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
+          <Route path="/measure/:id" component={Measure} />
           <Route path="/create/measure" component={MeasureForm} />
           <Route path="/measures" component={MeasureList} />
         </Switch>

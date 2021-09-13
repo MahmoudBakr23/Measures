@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { saveMeasure } from '../Actions/measure';
 
 const MeasureList = () => {
@@ -19,8 +20,8 @@ const MeasureList = () => {
     const measures = useSelector((state) => state);
     
     useEffect(() => {
-        fetchMeasures();
-    });
+        fetchMeasures(); // eslint-disable-next-line
+    }, []);
 
     const measureDisplay = () => {
         return measures.measureReducer;
@@ -28,11 +29,10 @@ const MeasureList = () => {
 
     return(
         <div>
-            {measureDisplay().map((measure) => (
+            <Link to="/create/measure">Add measure</Link>
+            {measureDisplay().map((measure) => ( 
                 <div key={measure.id}>
-                    <h3>{measure.name}</h3>
-                    <h3>{measure.time}</h3>
-                    <h3>{measure.count}</h3>
+                    <Link to={'/measure/'+measure.id}>{measure.name}</Link>
                 </div>
             ))}
         </div>
