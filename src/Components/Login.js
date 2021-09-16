@@ -35,11 +35,11 @@ const Login = () => {
     }
     return(
         <div className="form-container">
-        <h3>Login</h3>
+        <h3 className="login-signup">Login</h3>
         <form onSubmit={onSubmit}>
             <input name="email" type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} required />
             <input name="password" type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
-            <button type="submit">Create User</button>
+            <button className="submit-btn" type="submit">SUBMIT</button>
         </form>
         </div>
     )

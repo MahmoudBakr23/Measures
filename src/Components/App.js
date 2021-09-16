@@ -31,10 +31,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Welcome API</h1>
       <BrowserRouter>
+        <Home />
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
           <Route path="/measure/:id" component={Measure} />

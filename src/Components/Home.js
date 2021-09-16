@@ -30,25 +30,43 @@ const Home = () => {
     const displayLinks = () => {
         if(storedUser.userReducer.logged_in === true){
             return(
-                <div>
-                    <h4>{storedUser.userReducer.data.name}</h4>
-                    <button type="button" onClick={onClick}>logout</button>
-                    <Link to="/create/measure">Add Measure</Link>
-                    <Link to="/measures">Your Measures</Link>
-                </div>
+                <nav>
+                    <div className="username">
+                        <h4>{storedUser.userReducer.data.name}</h4>
+                    </div>
+                    <ul className="link-list">
+                        <li>
+                            <Link to="/create/measure">Add Measure</Link>
+                        </li>
+                        <li>
+                            <Link to="/measures">Your Measures</Link>
+                        </li>
+                        <li>
+                            <button type="button" onClick={onClick}>logout</button>
+                        </li>
+                    </ul>
+                </nav>
             )
         } else {
             return(
-                <div>
-                    <Link to="/login">Login</Link>
-                    <Link to="/signup">Signup</Link>
-                </div>
+                <nav>
+                    <ul className="signup-list">
+                        <li>
+                        <Link to="/signup">SIGNUP</Link>
+                        </li>
+                        <li>
+                        <Link to="/login">LOGIN</Link>
+                        </li>
+                    </ul>
+                </nav>
             )
         }
     }
 
     return(
-        displayLinks()
+        <header>
+            {displayLinks()}
+        </header>
     )
 }
 
