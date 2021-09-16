@@ -9,10 +9,13 @@ const Measure = () => {
     const dispatch = useDispatch();
 
     const fetchMeasure = async() => {
-        const response = await fetch(measure_url);
+        const response = await fetch(measure_url, {
+            headers: {
+              Authorization: `bearer ${localStorage.getItem('token')}`
+            }
+        })
         const data = await response.json();
         dispatch(getMeasure(data.data))
-        console.log(data);
     }
 
     const measure = useSelector((state) => state);

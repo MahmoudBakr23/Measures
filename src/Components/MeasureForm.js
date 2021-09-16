@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useCountUp } from 'react-countup';
 
 const MeasureForm = () => {
     const [name, setName] = useState('');
-    const [time, setTime] = useState('');
+    const [time, setTime] = useState(0);
     const [count, setCount] = useState('');
     const measure_url = 'http://localhost:3000/create/measure';
     const history = useHistory();
@@ -33,11 +34,34 @@ const MeasureForm = () => {
         e.preventDefault();
     }
 
+    const {
+        start, pauseResume, reset
+    } = useCountUp({
+        ref: 'timing',
+        start: time,
+        duration: 60,
+        end: 60,
+        startOnMount: false,
+        onPauseResume: () => {
+            document.getElementById('timer').value = document.getElementById('timing').textContent;
+            setTime(document.getElementById('timer').value);
+        }
+    });
+
+    // useEffect(() => {
+    //     document.getElementById('timing').textContent = document.getElementById('timer').value;
+    //     // setTime(document.getElementById('timer').value);
+    // }, [])
+
     return(
         <div>
+            <h2 id="timing" />
+            <button onClick={start}>Start</button>
+            <button onClick={pauseResume}>P/R</button>
+            <button onClick={reset}>Reset</button>
             <form onSubmit={onSubmit}>
                 <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
-                <input type="float" name="time" onChange={(e) => setTime(e.target.value)} />
+                <input id="timer" type="float" name="time" onChange={(e) => setTime(e.target.value)} />
                 <input type="number" name="count" onChange={(e) => setCount(e.target.value)} />
                 <button type="submit">GO</button>
             </form>
