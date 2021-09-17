@@ -5,7 +5,7 @@ import { getMeasure } from '../Actions/measure';
 
 const Measure = () => {
     const { id } = useParams();
-    const measure_url = `http://localhost:3000/measures/${id}`;
+    const measure_url = `https://dry-hamlet-99385.herokuapp.com/measures/${id}`;
     const dispatch = useDispatch();
 
     const fetchMeasure = async() => {

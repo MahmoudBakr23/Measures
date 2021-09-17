@@ -6,7 +6,7 @@ const MeasureForm = () => {
     const [name, setName] = useState('');
     const [time, setTime] = useState(0);
     const [count, setCount] = useState('');
-    const measure_url = 'http://localhost:3000/create/measure';
+    const measure_url = 'https://dry-hamlet-99385.herokuapp.com/create/measure';
     const history = useHistory();
 
     const createMeasure = async() => {

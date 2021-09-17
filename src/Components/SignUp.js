@@ -6,7 +6,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
-    const signup_url = 'http://localhost:3000/signup';
+    const signup_url = 'https://dry-hamlet-99385.herokuapp.com/signup';
     const history = useHistory();
 
     const fetchUser = async() => {

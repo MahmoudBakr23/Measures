@@ -6,7 +6,7 @@ import { getUsers } from '../Actions/user';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const login_url = 'http://localhost:3000/login';
+    const login_url = 'https://dry-hamlet-99385.herokuapp.com/login';
     const history = useHistory();
     const dispatch = useDispatch();
 

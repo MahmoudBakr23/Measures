@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveMeasure } from '../Actions/measure';
 
 const MeasureList = () => {
-    const measures_url = 'http://localhost:3000/all/measures';
+    const measures_url = 'https://dry-hamlet-99385.herokuapp.com/all/measures';
     const dispatch = useDispatch();
     
     const fetchMeasures = async() => {

@@ -11,8 +11,8 @@ import { getUsers } from '../Actions/user';
 
 const App = () => {
     const storedUser = useSelector((state) => state);
-    const logout_url = 'http://localhost:3000/logout'
-    const loggedIn_url = 'http://localhost:3000/logged_in';
+    const logout_url = 'https://dry-hamlet-99385.herokuapp.com/logout'
+    const loggedIn_url = 'https://dry-hamlet-99385.herokuapp.com/logged_in';
     const dispatch = useDispatch();
 
     const fetchLoggedInUser = async() => {
