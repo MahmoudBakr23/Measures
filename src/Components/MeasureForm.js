@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useCountUp } from 'react-countup';
 
@@ -26,7 +26,7 @@ const MeasureForm = () => {
         const response = await fetch(measure_url, config);
         const data = await response.json();
         history.push('/measures');
-        console.log(data);
+        return data;
     }
 
     const onSubmit = (e) => {
@@ -35,7 +35,7 @@ const MeasureForm = () => {
     }
 
     const {
-        start, pauseResume, reset
+        start, pauseResume
     } = useCountUp({
         ref: 'timing',
         start: time,
@@ -48,22 +48,23 @@ const MeasureForm = () => {
         }
     });
 
-    // useEffect(() => {
-    //     document.getElementById('timing').textContent = document.getElementById('timer').value;
-    //     // setTime(document.getElementById('timer').value);
-    // }, [])
-
     return(
         <div>
-            <h2 id="timing" />
-            <button onClick={start}>Start</button>
-            <button onClick={pauseResume}>P/R</button>
-            <button onClick={reset}>Reset</button>
+            <div className="timing-container">
+            <div className="timing-btns">
+            <button className="time-green" onClick={start}>Start</button>
+            <button className="time-red" onClick={pauseResume}>Stop</button>
+            </div>
+            <div className="time-circle">
+            <p id="timing" />
+            <span>s</span>
+            </div>
+            </div>
             <form onSubmit={onSubmit}>
-                <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
-                <input id="timer" type="float" name="time" onChange={(e) => setTime(e.target.value)} />
-                <input type="number" name="count" onChange={(e) => setCount(e.target.value)} />
-                <button type="submit">GO</button>
+                <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Measure name" />
+                <input id="timer" type="float" name="time" onChange={(e) => setTime(e.target.value)} hidden />
+                <input type="number" name="count" onChange={(e) => setCount(e.target.value)} placeholder="How many counts?" />
+                <button className="submit-btn" type="submit">SUBMIT</button>
             </form>
         </div>
     )

@@ -41,6 +41,7 @@ const Login = () => {
             <input name="password" type="password" value={password} placeholder="Password" onChange={(e) => setPassword(e.target.value)} required />
             <button className="submit-btn" type="submit">SUBMIT</button>
         </form>
+        <a className="create-account" href="/signup">Create account?</a>
         </div>
     )
 }

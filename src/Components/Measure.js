@@ -29,10 +29,18 @@ const Measure = () => {
     }
 
     return(
-        <div>
-            <h3>{displayMeasure().name}</h3>
-            <h3>{displayMeasure().count}</h3>
-            <h3>{displayMeasure().time}</h3>
+        <div className="single-measure">
+            <div className="measure-name">
+                <h3>{displayMeasure().name}</h3>
+            </div>
+            <div className="measure-timing">
+                <h3>{displayMeasure().time}</h3>
+                <span>s</span>
+            </div>
+            <div className="measure-count">
+                <h5>Count:</h5>
+                <h3>{displayMeasure().count}</h3>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { saveMeasure } from '../Actions/measure';
 
 const MeasureList = () => {
@@ -28,11 +27,11 @@ const MeasureList = () => {
     }
 
     return(
-        <div>
-            <Link to="/create/measure">Add measure</Link>
-            {measureDisplay().map((measure) => ( 
-                <div key={measure.id}>
-                    <Link to={'/measure/'+measure.id}>{measure.name}</Link>
+        <div className="measure-list">
+            {measureDisplay().map((measure) => (
+                <div className="measure-show" key={measure.id}>
+                <a href={'/measure/'+measure.id}>{measure.name}</a>
+                <h4 className="measure-time">{measure.time} s</h4>
                 </div>
             ))}
         </div>
