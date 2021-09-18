@@ -4,24 +4,8 @@
 ### [Tracking App](https://www.notion.so/Final-Capstone-Project-Tracking-App-22e454da738c46efaf17721826841772)
 > This is a measurements app that allows users to calculatoe their number of counts on whatever they're trying to measure.
 
-<table>
-<tr>
-<td>
- ![screenshot](./src/Screenshot1.png)
-</td>
-<td>
- ![screenshot](./src/Screenshot2.png)
-</td>
-</tr>
-<tr>
-<td>
- ![screenshot](./src/Screensho3.png)
-</td>
-<td>
- ![screenshot](./src/Screenshot4.png)
-</td>
-</tr>
-</table>
+ ![screenshot](./src/Screenshot1.png) ![screenshot](./src/Screenshot2.png)
+ ![screenshot](./src/Screensho3.png)  ![screenshot](./src/Screenshot4.png)
 
 ## Built With
 
