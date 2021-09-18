@@ -2,8 +2,9 @@
 
 # Your Measures
 ### [Tracking App](https://www.notion.so/Final-Capstone-Project-Tracking-App-22e454da738c46efaf17721826841772)
-> This is a measurements app that allows users to calculatoe their number of counts on whatever they're trying to measure.
- ![screenshot](./src/Screenshot1.png)
+> This is a measurements app that allows users to calculatoe their number of counts on whatever they're trying to measure, and it's being run by another backend API built by rails. [See here!](https://github.com/MahmoudBakr23/Measures-API/tree/feature)
+
+![screenshot](./src/Screenshot1.png)
 
 ## Built With
 
@@ -14,7 +15,7 @@
 
 ## Live Demo
 
-[See project](https://quotexquote.herokuapp.com/)
+[Measurey](https://measurey.herokuapp.com/)
 
 ## Getting Started
 

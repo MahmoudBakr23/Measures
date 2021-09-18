@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import App from './Components/App';
 import SignUp from './Components/SignUp';
 import Login from './Components/Login';
 import MeasureForm from './Components/MeasureForm';
 import MeasureList from './Components/MeasureList';
 import Measure from './Components/Measure';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
 import store from './Reducers/store';
 
 ReactDOM.render(
   <>
-  <Provider store={store}>
-    <App />
+    <Provider store={store}>
+      <App />
       <BrowserRouter>
         <Switch>
           <Route path="/signup" component={SignUp} />
@@ -25,9 +25,9 @@ ReactDOM.render(
           <Route path="/measures" component={MeasureList} />
         </Switch>
       </BrowserRouter>
-  </Provider>
+    </Provider>
   </>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

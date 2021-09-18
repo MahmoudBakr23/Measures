@@ -1,10 +1,10 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.9rem;
-  color: #ACAFB4;
+  color: #acafb4;
 }
 
 a,
@@ -24,7 +24,7 @@ li {
 nav {
   display: flex;
   justify-content: space-between;
-  background-color:#42B5E8;
+  background-color: #42b5e8;
   padding: 0.5rem 0;
 }
 
@@ -60,7 +60,7 @@ button {
 }
 
 .login-signup {
-  color: #42B5E8;
+  color: #42b5e8;
   font-size: 1rem;
   padding: 0.5rem 0;
 }
@@ -76,13 +76,13 @@ input {
   border: 0;
 }
 
-input:focus{
+input:focus {
   outline: 0;
-  border-bottom: 2px solid #42B5E8;
+  border-bottom: 2px solid #42b5e8;
 }
 
 .submit-btn {
-  background-color: #97E493;
+  background-color: #97e493;
   padding: 1rem 0;
   margin: 1rem 0;
   color: #fff;
@@ -110,7 +110,7 @@ footer {
 }
 
 .footer-list li:hover {
-  background-color: #42B5E8;
+  background-color: #42b5e8;
 }
 
 .footer-list li div {
@@ -144,7 +144,7 @@ footer {
 }
 
 .time-green {
-  color: #42B5E8;
+  color: #42b5e8;
   font-weight: bold;
   padding: 1rem;
 }
@@ -157,7 +157,7 @@ footer {
 
 .time-green::placeholder,
 .time-red::placeholder {
-  color: #ACAFB4;
+  color: #acafb4;
 }
 
 #timing {
@@ -167,7 +167,7 @@ footer {
 
 .time-circle {
   padding: 2rem 3rem;
-  border: 2px #42B5E8 solid;
+  border: 2px #42b5e8 solid;
   border-radius: 50%;
 }
 
@@ -177,7 +177,7 @@ footer {
   grid-gap: 5px;
   padding: 1rem;
   text-align: center;
-  background-color: #ACAFB4;
+  background-color: #acafb4;
 }
 
 .measure-show {
@@ -204,6 +204,6 @@ footer {
 
 .measure-timing {
   padding: 2rem;
-  border: 2px #42B5E8 solid;
+  border: 2px #42b5e8 solid;
   border-radius: 50%;
 }
