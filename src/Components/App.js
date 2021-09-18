@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
 import '../App.css';
-import SignUp from './SignUp';
-import Login from './Login';
-import MeasureForm from './MeasureForm';
-import MeasureList from './MeasureList';
-import Measure from './Measure';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUsers } from '../Actions/user';
 
@@ -71,15 +65,6 @@ const App = () => {
           <h2 className="app-text">Your Measures</h2>
         </nav>
       </header>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/signup" component={SignUp} />
-          <Route path="/login" component={Login} />
-          <Route path="/measure/:id" component={Measure} />
-          <Route path="/create/measure" component={MeasureForm} />
-          <Route path="/measures" component={MeasureList} />
-        </Switch>
-      </BrowserRouter>
       <footer>
         <ul className="footer-list">
           <li>
