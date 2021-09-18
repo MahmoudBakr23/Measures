@@ -5,7 +5,7 @@
 > This is a measurements app that allows users to calculatoe their number of counts on whatever they're trying to measure.
 
  ![screenshot](./src/Screenshot1.png) ![screenshot](./src/Screenshot2.png)
- ![screenshot](./src/Screensho3.png)  ![screenshot](./src/Screenshot4.png)
+ ![screenshot](./src/Screensho3.png) ![screenshot](./src/Screenshot4.png)
 
 ## Built With
 
@@ -24,17 +24,27 @@ To get a local copy up and running follow these simple example steps.
 
 - Open your terminal
 Then run the following command line
-- `git clone https://github.com/MahmoudBakr23/quoteXquote.git`
+```
+ git clone https://github.com/MahmoudBakr23/Measures.git`
+```
 Then run the following command line
-- `cd quoteXquote`
+```
+ cd Measures
+```
 Then install the required npm packages to run the app
-- `npm i`
+```
+ npm i
+```
 Then run this command line to start the app
-- `npm start`
+```
+ npm start
+ ```
 
 ### Run tests
 To run the tests type this command line in the terminal
-- `npm test`
+```
+ npm test
+```
 
 ## Authors
 
@@ -47,7 +57,7 @@ To run the tests type this command line in the terminal
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/MahmoudBakr23/quoteXquote/issues).
+Feel free to check the [issues page](https://github.com/MahmoudBakr23/Measures/issues).
 
 ## Show your support
 
@@ -55,8 +65,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [animechan](https://animechan.vercel.app/)
-- [jikan](https://jikan.docs.apiary.io/#)
 - [Microverse](https://www.microverse.org/)
 
 ## 📝 License
