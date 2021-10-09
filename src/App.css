@@ -1,38 +1,221 @@
-.App {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  color: #acafb4;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #42b5e8;
+  padding: 0.5rem 0;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.app-text {
+  text-align: center;
+  margin: 1rem auto;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.link-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signup-list {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.login-signup {
+  color: #42b5e8;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
+input {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border: 0;
+}
+
+input:focus {
+  outline: 0;
+  border-bottom: 2px solid #42b5e8;
+}
+
+.submit-btn {
+  background-color: #97e493;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-list {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #313944;
+}
+
+.footer-list li {
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.footer-list li:hover {
+  background-color: #42b5e8;
+}
+
+.footer-list li div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer-list li div h6 {
+  font-size: 0.7rem;
+  margin: 0.2rem 0;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.timing-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.timing-btns {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.time-green {
+  color: #42b5e8;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.time-red {
+  color: #f42;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.time-green::placeholder,
+.time-red::placeholder {
+  color: #acafb4;
+}
+
+#timing {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.time-circle {
+  padding: 2rem 3rem;
+  border: 2px #42b5e8 solid;
+  border-radius: 50%;
+}
+
+.measure-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #acafb4;
+}
+
+.measure-show {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.single-measure {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem;
+}
+
+.measure-name,
+.measure-timing,
+.measure-count {
+  padding: 1rem 0;
+}
+
+.measure-timing {
+  padding: 1rem 0.3rem;
+  width: 50%;
+  margin: 0 auto;
+  border: 2px #42b5e8 solid;
+  border-radius: 50%;
+}
+
+.measure-display {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
