@@ -21,6 +21,7 @@ const TrainingForm = () => {
     const response = await fetch(trainingURL, config);
     const data = await response.json();
     history.push('/all/trainings');
+    return data;
   };
 
   const onSubmit = (e) => {
