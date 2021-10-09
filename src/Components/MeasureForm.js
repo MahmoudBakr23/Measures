@@ -3,17 +3,17 @@ import { useHistory } from 'react-router-dom';
 import { useCountUp } from 'react-countup';
 
 const MeasureForm = () => {
-  const [name, setName] = useState('');
   const [time, setTime] = useState(0);
-  const [count, setCount] = useState('');
-  const measureURL = 'https://dry-hamlet-99385.herokuapp.com/create/measure';
+  const [count, setCount] = useState(0); // eslint-disable-next-line
+  const training_id = localStorage.getItem('id');
+  const measureURL = 'http://localhost:3000/create/measure';
   const history = useHistory();
 
   const createMeasure = async () => {
     const measure = {
-      name,
       time,
-      count,
+      count, // eslint-disable-next-line
+      training_id,
     };
     const config = {
       method: 'POST',
@@ -25,8 +25,8 @@ const MeasureForm = () => {
     };
     const response = await fetch(measureURL, config);
     const data = await response.json();
+    console.log(data);
     history.push('/measures');
-    return data;
   };
 
   const onSubmit = (e) => {
@@ -61,8 +61,7 @@ const MeasureForm = () => {
         </div>
       </div>
       <form onSubmit={onSubmit}>
-        <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Measure name" />
-        <input id="timer" type="float" name="time" onChange={(e) => setTime(e.target.value)} hidden />
+        <input id="timer" type="number" name="time" onChange={(e) => setTime(e.target.value)} hidden />
         <input type="number" name="count" onChange={(e) => setCount(e.target.value)} placeholder="How many counts?" />
         <button type="submit" className="submit-btn">SUBMIT</button>
       </form>

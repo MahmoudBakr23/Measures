@@ -5,8 +5,8 @@ import { getUsers } from '../Actions/user';
 
 const App = () => {
   const storedUser = useSelector((state) => state);
-  const logoutURL = 'https://dry-hamlet-99385.herokuapp.com/logout';
-  const loggedInURL = 'https://dry-hamlet-99385.herokuapp.com/logged_in';
+  const logoutURL = 'http://localhost:3000/logout';
+  const loggedInURL = 'http://localhost:3000/logged_in';
   const dispatch = useDispatch();
 
   const fetchLoggedInUser = async () => {
@@ -67,13 +67,13 @@ const App = () => {
         <ul className="footer-list">
           <li>
             <div>
-              <a href="/create/measure"><i className="fas fa-plus-square" /></a>
+              <a href="/create/training"><i className="fas fa-plus-square" /></a>
               <h6>Add</h6>
             </div>
           </li>
           <li>
             <div>
-              <a href="/measures"><i className="fas fa-chart-pie" /></a>
+              <a href="/all/trainings"><i className="fas fa-chart-pie" /></a>
               <h6>All</h6>
             </div>
           </li>
@@ -82,7 +82,7 @@ const App = () => {
           </li>
           <li>
             <div>
-              <a href="/create/measure"><i className="fas fa-ellipsis-h" /></a>
+              <a href="/create/training"><i className="fas fa-ellipsis-h" /></a>
               <h6>More</h6>
             </div>
           </li>

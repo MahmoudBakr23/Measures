@@ -6,11 +6,11 @@ import { Provider } from 'react-redux';
 import App from './Components/App';
 import SignUp from './Components/SignUp';
 import Login from './Components/Login';
-import MeasureForm from './Components/MeasureForm';
-import MeasureList from './Components/MeasureList';
-import Measure from './Components/Measure';
+import Training from './Components/Training';
 import reportWebVitals from './reportWebVitals';
 import store from './Reducers/store';
+import TrainingForm from './Components/TrainingForm';
+import TrainingList from './Components/TrainingList';
 
 ReactDOM.render(
   <>
@@ -20,9 +20,9 @@ ReactDOM.render(
         <Switch>
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={Login} />
-          <Route path="/measure/:id" component={Measure} />
-          <Route path="/create/measure" component={MeasureForm} />
-          <Route path="/measures" component={MeasureList} />
+          <Route path="/create/training" component={TrainingForm} />
+          <Route path="/all/trainings" component={TrainingList} />
+          <Route path="/training/:id" component={Training} />
         </Switch>
       </BrowserRouter>
     </Provider>
