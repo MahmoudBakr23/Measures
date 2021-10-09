@@ -68,6 +68,7 @@ button {
 form {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 input {
@@ -203,7 +204,9 @@ footer {
 }
 
 .measure-timing {
-  padding: 2rem;
+  padding: 1rem 0.3rem;
+  width: 50%;
+  margin: 0 auto;
   border: 2px #42b5e8 solid;
   border-radius: 50%;
 }

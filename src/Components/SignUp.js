@@ -6,7 +6,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const signupURL = 'http://localhost:3000/signup';
+  const signupURL = 'https://mysterious-anchorage-87965.herokuapp.com/signup';
   const history = useHistory();
 
   const fetchUser = async () => {

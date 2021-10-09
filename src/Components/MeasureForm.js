@@ -6,7 +6,7 @@ const MeasureForm = () => {
   const [time, setTime] = useState(0);
   const [count, setCount] = useState(0); // eslint-disable-next-line
   const training_id = localStorage.getItem('id');
-  const measureURL = 'http://localhost:3000/create/measure';
+  const measureURL = 'https://mysterious-anchorage-87965.herokuapp.com/create/measure';
   const history = useHistory();
 
   const createMeasure = async () => {
@@ -25,8 +25,8 @@ const MeasureForm = () => {
     };
     const response = await fetch(measureURL, config);
     const data = await response.json();
-    console.log(data);
-    history.push('/measures');
+    history.push('/all/trainings');
+    return data;
   };
 
   const onSubmit = (e) => {

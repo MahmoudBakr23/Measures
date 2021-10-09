@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTrainings } from '../Actions/training';
 
 const TrainingList = () => {
-  const trainingsURL = 'http://localhost:3000/all/trainings';
+  const trainingsURL = 'https://mysterious-anchorage-87965.herokuapp.com/all/trainings';
   const dispatch = useDispatch();
 
   const fetchTrainings = async () => {

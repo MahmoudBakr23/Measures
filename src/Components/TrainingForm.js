@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 const TrainingForm = () => {
   const [name, setName] = useState('');
-  const trainingURL = 'http://localhost:3000/create/training';
+  const trainingURL = 'https://mysterious-anchorage-87965.herokuapp.com/create/training';
   const history = useHistory();
 
   const createTraining = async () => {
@@ -32,7 +32,7 @@ const TrainingForm = () => {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
+        <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="What's your training!" />
         <button type="submit" className="submit-btn">SUBMIT</button>
       </form>
     </div>
