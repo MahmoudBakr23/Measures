@@ -20,7 +20,6 @@ const TrainingForm = () => {
     };
     const response = await fetch(trainingURL, config);
     const data = await response.json();
-    console.log(data);
     history.push('/all/trainings');
   };
 
